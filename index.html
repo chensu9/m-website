@@ -245,6 +245,9 @@
             width: 100%; 
             height: 100%; 
             object-fit: cover; 
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-drag: none;
         }
         
         .slider-nav {
@@ -441,6 +444,7 @@
             border-radius: 4px;
             transition: 0.3s; 
             background: rgba(230, 200, 106, 0.05);
+            text-align: center;
         }
 
         .btn:hover { 
@@ -463,7 +467,6 @@
         .diploma-track { 
             display: flex; 
             gap: 30px; 
-            /* ЗАМЕДЛИЛИ АНИМАЦИЮ: было 80s, стало 120s */
             animation: scroll 120s linear infinite; 
         }
 
@@ -522,15 +525,6 @@
             border-top: 1px solid var(--glass-border); 
         }
 
-        .footer-link { 
-            color: var(--gold); 
-            font-size: 1.5rem; 
-            text-decoration: none; 
-            display: block; 
-            margin: 25px 0 10px; 
-            font-weight: 600; 
-        }
-
         .footer-sublink {
             color: var(--text-main);
             font-size: 1.1rem;
@@ -538,7 +532,7 @@
             opacity: 0.8;
             transition: 0.3s;
             display: inline-block;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .footer-sublink:hover {
@@ -567,7 +561,7 @@
     </div>
 
     <nav>
-        <div class="nav-logo">M. Shilin</div>
+        <div class="nav-logo">M.Shilin</div>
         <div class="nav-links">
             <a href="#about">О себе</a>
             <a href="#education">Квалификация</a>
@@ -586,7 +580,7 @@
                 <p class="hero-description">
                     Профессиональная помощь в преодолении зависимостей и кризисных состояний. Сочетание глубокой академической базы и современных методов психотерапии для возвращения контроля над жизнью.
                 </p>
-                <a href="https://t.me/ShilinMishail" class="btn" target="_blank">Записаться на прием</a>
+                <a href="#contact" class="btn">Записаться на прием</a>
             </div>
             
             <div class="hero-slider-container" data-aos="fade-in" data-aos-delay="200">
@@ -874,13 +868,18 @@
 
     <footer id="contact">
         <div class="footer-content" data-aos="zoom-in">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--gold);">Начать работу</h2>
-            <a href="https://t.me/ShilinMishail" class="footer-link" target="_blank">Telegram: @ShilinMishail</a>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--gold); margin-bottom: 20px;">Начать работу</h2>
             
             <a href="https://avrora-clinic.ru/" class="footer-sublink" target="_blank">Веду практику в клинике «Аврора»</a>
             
-            <p style="opacity: 0.7; margin-bottom: 30px;">Запись на первичную консультацию и диагностику через мессенджер</p>
-            <a href="https://t.me/ShilinMishail" class="btn" target="_blank">Написать в Telegram</a>
+            <p style="opacity: 0.8; margin-bottom: 40px; font-size: 1.1rem; line-height: 1.6;">Запись на первичную консультацию и диагностику осуществляется через любую удобную для вас платформу:</p>
+            
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <a href="https://t.me/ShilinMishail" class="btn" target="_blank">Telegram</a>
+                <a href="https://vk.ru/id675320470" class="btn" target="_blank">ВКонтакте</a>
+                <a href="https://max.ru/u/f9LHodD0cOKmA-0b6nRhbQ9EmcUC6fifAMjbAF1eCjosJNb6VR9oBL-UG-I" class="btn" target="_blank">MAX</a>
+            </div>
+            
         </div>
     </footer>
 
@@ -900,16 +899,20 @@
         function moveSlider(direction) {
             currentSlide += direction;
             
+            // Если дошли до конца — возвращаемся к первому фото
             if (currentSlide >= slides.length) {
                 currentSlide = 0;
             }
+            // Если листаем назад с первого — переходим к последнему
             if (currentSlide < 0) {
                 currentSlide = slides.length - 1;
             }
             
+            // Сдвигаем контейнер с фотографиями
             slider.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
 
+        // Автоматическое перелистывание слайдера каждые 5 секунд
         setInterval(() => {
             moveSlider(1);
         }, 5000);
