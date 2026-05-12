@@ -315,7 +315,7 @@
 
         .about-text-content h3 { 
             color: var(--gold); 
-            font-size: 1.8rem; 
+            font-size: 1.6rem; 
             margin-bottom: 25px; 
         }
 
@@ -463,7 +463,12 @@
         .diploma-track { 
             display: flex; 
             gap: 30px; 
-            animation: scroll 80s linear infinite; 
+            /* ЗАМЕДЛИЛИ АНИМАЦИЮ: было 80s, стало 120s */
+            animation: scroll 120s linear infinite; 
+        }
+
+        .diploma-track:hover {
+            animation-play-state: paused;
         }
 
         .diploma-card {
@@ -482,11 +487,15 @@
             text-align: center;
         }
 
+        /* ОТКЛЮЧЕНО ВЗАИМОДЕЙСТВИЕ И СКАЧИВАНИЕ */
         .diploma-card img { 
             max-width: 100%; 
             max-height: 80%; 
             object-fit: contain; 
-            margin-bottom: 20px; 
+            margin-bottom: 20px;
+            pointer-events: none; /* Запрещает клики (и правую кнопку мыши) */
+            user-select: none; /* Запрещает выделение */
+            -webkit-user-drag: none; /* Запрещает перетаскивание картинки */
         }
 
         .diploma-card h4 { 
@@ -495,6 +504,7 @@
             letter-spacing: 1px; 
             color: var(--text-main); 
             font-weight: 500; 
+            user-select: none;
         }
 
         @keyframes scroll { 
@@ -517,7 +527,7 @@
             font-size: 1.5rem; 
             text-decoration: none; 
             display: block; 
-            margin: 20px 0 10px; 
+            margin: 25px 0 10px; 
             font-weight: 600; 
         }
 
@@ -540,37 +550,17 @@
            АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
            ========================================== */
         @media (max-width: 968px) {
-            .hero-grid { 
-                grid-template-columns: 1fr; 
-                text-align: center; 
-            }
-            .hero-title { 
-                font-size: 3.2rem; 
-            }
-            .hero-image-box { 
-                height: 50vh; 
-                order: -1; 
-            }
-            .hero-description { 
-                border-left: none; 
-                border-top: 2px solid var(--gold); 
-                padding: 25px 0; 
-            }
-            .nav-links { 
-                display: none; 
-            }
-            .about-grid { 
-                grid-template-columns: 1fr; 
-            }
-            .topics-list { 
-                grid-template-columns: 1fr; 
-            }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-title { font-size: 3.2rem; }
+            .hero-image-box { height: 50vh; order: -1; }
+            .hero-description { border-left: none; border-top: 2px solid var(--gold); padding: 25px 0; }
+            .nav-links { display: none; }
+            .about-grid { grid-template-columns: 1fr; }
+            .topics-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
-<body>
-
-    <div class="animated-bg">
+<body oncontextmenu="return false;"> <div class="animated-bg">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
@@ -629,31 +619,35 @@
             <div class="about-grid">
                 
                 <div class="about-text-content">
-                    <p>Я являюсь клиническим психологом, консультантом по химической зависимости и аддиктологом — специалистом по работе с любыми формами зависимого поведения.</p>
-                    <p>В настоящее время я веду практику в <a href="https://avrora-clinic.ru/" target="_blank" class="clinic-link">реабилитационном центре стационарного типа «Аврора»</a>. Мой опыт включает работу как с химическими зависимостями (алкоголь, наркотики), так и с нехимическими аддикциями (игромания, шопоголизм, сексоголизм и другие).</p>
-                    <p>Для каждого клиента я подбираю индивидуальный план работы. Провожу глубокую диагностику и патодиагностику для выявления реабилитационного потенциала. Также осуществляю <b>выездные интервенции</b> в семьи — помогаю провести мотивационные мероприятия, чтобы человек сам принял осознанное решение начать лечение.</p>
+                    <p>Я являюсь клиническим психологом, консультантом по химической зависимости, аддиктологом (специалист по работе с зависимым поведением).</p>
+                    <p>В настоящее время я консультирую в <a href="https://avrora-clinic.ru/" target="_blank" class="clinic-link">реабилитационном центре стационарного типа «Аврора»</a>, где работаю как с химически зависимыми (алко/нарко зависимыми), так и с нехимическими зависимыми (игроманы, шопоголики, сексоголики, пищевое расстройство).</p>
+                    <p>Для более индивидуального подхода к клиенту и выявления реабилитационного потенциала при сборе анамнеза провожу диагностики и патодиагностику (по запросу).</p>
+                    <p>Так же осуществляю <b>выездные интервенции</b> в семьи, где необходимо провести мотивационные мероприятия, направленные на то, чтобы клиент сам принял решение для прохождения лечения.</p>
+                    <p>Я открыт новому и постоянно обучаюсь, повышаю квалификацию, участвую в профессиональных конференциях и иных мероприятиях. Занимаюсь созданием собственной авторской колоды МАК (метафорических ассоциативных карт) для работы с игроманами.</p>
                 </div>
                 
                 <div class="about-text-content">
-                    <h3>Темы, с которыми я работаю:</h3>
+                    <h3>Я помогаю решить запросы по темам:</h3>
                     <ul class="topics-list">
-                        <li>Зависимости (любые виды)</li>
-                        <li>Созависимые отношения</li>
+                        <li>Зависимость</li>
+                        <li>Созависимые отношения и выход из них</li>
                         <li>Тревожные расстройства</li>
-                        <li>Самооценка и принятие себя</li>
-                        <li>Деструктивные отношения</li>
-                        <li>ПТСР и алекситимия</li>
+                        <li>Проблемы с самооценкой и принятием себя</li>
+                        <li>Деструктивные семейные взаимоотношения</li>
+                        <li>ПТСР (посттравматическое стрессовое расстройство)</li>
+                        <li>Алекситимия</li>
                     </ul>
                     
                     <div class="methods-block">
-                        <h3>Подходы и методы:</h3>
-                        <span class="method-tag">КПТ подход</span>
-                        <span class="method-tag">МАК (карты)</span>
+                        <h3>Форматы и подходы работы:</h3>
+                        <span class="method-tag">Терапевтические группы</span>
+                        <span class="method-tag">Психокоррекционные группы</span>
                         <span class="method-tag">Арт-терапия</span>
                         <span class="method-tag">Игропрактики</span>
-                        <span class="method-tag">Сказкотерапия</span>
                         <span class="method-tag">Тренинги</span>
-                        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8; font-style: italic;">*При необходимости работаю в тесном сотрудничестве с психиатром-наркологом.</p>
+                        <span class="method-tag">Сказкотерапия</span>
+                        <p style="margin-top: 20px; font-size: 0.9rem; opacity: 0.8; font-style: italic;">*Работаю в КПТ подходе, в работе с психологическими блоками и травмами применяю МАК (метафорические ассоциативные карты).</p>
+                        <p style="margin-top: 5px; font-size: 0.9rem; opacity: 0.8; font-style: italic;">*При необходимости работаю в паре с психиатром-наркологом.</p>
                     </div>
                 </div>
                 
@@ -906,20 +900,16 @@
         function moveSlider(direction) {
             currentSlide += direction;
             
-            // Если дошли до конца — возвращаемся к первому фото
             if (currentSlide >= slides.length) {
                 currentSlide = 0;
             }
-            // Если листаем назад с первого — переходим к последнему
             if (currentSlide < 0) {
                 currentSlide = slides.length - 1;
             }
             
-            // Сдвигаем контейнер с фотографиями
             slider.style.transform = `translateX(-${currentSlide * 100}%)`;
         }
 
-        // Автоматическое перелистывание слайдера каждые 5 секунд
         setInterval(() => {
             moveSlider(1);
         }, 5000);
