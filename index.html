@@ -58,6 +58,21 @@
             color: var(--text-header);
         }
 
+        /* Кастомная ссылка на клинику */
+        .clinic-link {
+            color: var(--gold);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--gold-muted);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .clinic-link:hover {
+            color: #ffffff;
+            border-bottom-color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
         /* ==========================================
            АНИМИРОВАННЫЙ ЗАДНИЙ ФОН
            ========================================== */
@@ -502,8 +517,23 @@
             font-size: 1.5rem; 
             text-decoration: none; 
             display: block; 
-            margin: 25px 0; 
+            margin: 20px 0 10px; 
             font-weight: 600; 
+        }
+
+        .footer-sublink {
+            color: var(--text-main);
+            font-size: 1.1rem;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: 0.3s;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .footer-sublink:hover {
+            color: var(--gold);
+            opacity: 1;
         }
 
         /* ==========================================
@@ -587,7 +617,7 @@
                     <button class="slider-btn" onclick="moveSlider(1)">→</button>
                 </div>
 
-                <img src="logo.png" class="img-logo-overlay" alt="Логотип Михаила Шилина">
+                <img src="logo.jpg" class="img-logo-overlay" alt="Логотип Михаила Шилина">
             </div>
             
         </div>
@@ -600,7 +630,7 @@
                 
                 <div class="about-text-content">
                     <p>Я являюсь клиническим психологом, консультантом по химической зависимости и аддиктологом — специалистом по работе с любыми формами зависимого поведения.</p>
-                    <p>В настоящее время я веду практику в <b>реабилитационном центре стационарного типа</b>. Мой опыт включает работу как с химическими зависимостями (алкоголь, наркотики), так и с нехимическими аддикциями (игромания, шопоголизм, сексоголизм и другие).</p>
+                    <p>В настоящее время я веду практику в <a href="https://avrora-clinic.ru/" target="_blank" class="clinic-link">реабилитационном центре стационарного типа «Аврора»</a>. Мой опыт включает работу как с химическими зависимостями (алкоголь, наркотики), так и с нехимическими аддикциями (игромания, шопоголизм, сексоголизм и другие).</p>
                     <p>Для каждого клиента я подбираю индивидуальный план работы. Провожу глубокую диагностику и патодиагностику для выявления реабилитационного потенциала. Также осуществляю <b>выездные интервенции</b> в семьи — помогаю провести мотивационные мероприятия, чтобы человек сам принял осознанное решение начать лечение.</p>
                 </div>
                 
@@ -852,6 +882,9 @@
         <div class="footer-content" data-aos="zoom-in">
             <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--gold);">Начать работу</h2>
             <a href="https://t.me/ShilinMishail" class="footer-link" target="_blank">Telegram: @ShilinMishail</a>
+            
+            <a href="https://avrora-clinic.ru/" class="footer-sublink" target="_blank">Веду практику в клинике «Аврора»</a>
+            
             <p style="opacity: 0.7; margin-bottom: 30px;">Запись на первичную консультацию и диагностику через мессенджер</p>
             <a href="https://t.me/ShilinMishail" class="btn" target="_blank">Написать в Telegram</a>
         </div>
