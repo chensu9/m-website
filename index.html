@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Михаил Шилин | Клинический психолог и аддиктолог</title>
-    <meta name="description" content="Профессиональная помощь в преодолении зависимостей и кризисных состояний. Индивидуальные консультации, патодиагностика, выездные интервенции.">
+    <meta name="description" content="Профессиональная помощь в преодолении зависимостей и кризисных состояний. Индивидуальные консультации, диагностика, выездные интервенции.">
     
     <meta property="og:title" content="Михаил Шилин | Клинический психолог и аддиктолог">
-    <meta property="og:description" content="Профессиональная помощь в преодолении зависимостей и кризисных состояний. Индивидуальные консультации, патодиагностика, выездные интервенции.">
+    <meta property="og:description" content="Профессиональная помощь в преодолении зависимостей и возвращении контроля над жизнью. Экспертный подход к лечению аддикций.">
     <meta property="og:image" content="photo_2026-05-12_21-55-26.jpg">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Михаил Шилин — Частная практика">
@@ -63,7 +63,7 @@
 
         h1, h2, h3, h4 {
             font-weight: 600;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
             color: var(--text-header);
         }
 
@@ -225,9 +225,7 @@
             opacity: 0.9; 
         }
 
-        /* ==========================================
-           СЛАЙДЕР В ГЛАВНОМ ЭКРАНЕ
-           ========================================== */
+        /* СЛАЙДЕР В ГЛАВНОМ ЭКРАНЕ */
         .hero-slider-container {
             position: relative; 
             width: 100%; 
@@ -254,18 +252,18 @@
             width: 100%; 
             height: 100%; 
             object-fit: cover; 
-            pointer-events: none;
-            user-select: none;
+            pointer-events: none; 
+            user-select: none; 
             -webkit-user-drag: none;
         }
         
-        .slider-nav {
+        .slider-nav { 
             position: absolute; 
             bottom: 20px; 
             left: 20px; 
             display: flex; 
             gap: 10px; 
-            z-index: 20;
+            z-index: 20; 
         }
 
         .slider-btn {
@@ -289,9 +287,7 @@
             border-color: var(--gold); 
         }
 
-        /* ==========================================
-           ЛОГОТИП ПОВЕРХ СЛАЙДЕРА
-           ========================================== */
+        /* ЛОГОТИП ПОВЕРХ ФОТО */
         .img-logo-overlay {
             position: absolute; 
             bottom: 25px; 
@@ -452,7 +448,7 @@
             font-weight: 600; 
             border-radius: 4px;
             transition: 0.3s; 
-            background: rgba(230, 200, 106, 0.05);
+            background: rgba(230, 200, 106, 0.05); 
             text-align: center;
         }
 
@@ -505,9 +501,9 @@
             max-height: 80%; 
             object-fit: contain; 
             margin-bottom: 20px;
-            pointer-events: none; /* Запрещает клики (и правую кнопку мыши) */
-            user-select: none; /* Запрещает выделение */
-            -webkit-user-drag: none; /* Запрещает перетаскивание картинки */
+            pointer-events: none; 
+            user-select: none; 
+            -webkit-user-drag: none; 
         }
 
         .diploma-card h4 { 
@@ -522,7 +518,7 @@
         /* Формула пересчитана на 19 карточек (300px ширина + 30px отступ) */
         @keyframes scroll { 
             0% { transform: translateX(0); } 
-            100% { transform: translateX(calc(-300px * 19 - 30px * 19)); } 
+            100% { transform: translateX(calc(-330px * 19)); } 
         }
 
         /* ==========================================
@@ -554,17 +550,38 @@
            АДАПТИВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
            ========================================== */
         @media (max-width: 968px) {
-            .hero-grid { grid-template-columns: 1fr; text-align: center; }
-            .hero-title { font-size: 3.2rem; }
-            .hero-image-box { height: 50vh; order: -1; }
-            .hero-description { border-left: none; border-top: 2px solid var(--gold); padding: 25px 0; }
-            .nav-links { display: none; }
-            .about-grid { grid-template-columns: 1fr; }
-            .topics-list { grid-template-columns: 1fr; }
+            .hero-grid { 
+                grid-template-columns: 1fr; 
+                text-align: center; 
+            }
+            .hero-title { 
+                font-size: 3.2rem; 
+            }
+            .hero-image-box { 
+                height: 50vh; 
+                order: -1; 
+            }
+            .hero-description { 
+                border-left: none; 
+                border-top: 2px solid var(--gold); 
+                padding: 25px 0; 
+            }
+            .nav-links { 
+                display: none; 
+            }
+            .about-grid { 
+                grid-template-columns: 1fr; 
+            }
+            .topics-list { 
+                grid-template-columns: 1fr; 
+            }
         }
     </style>
 </head>
-<body oncontextmenu="return false;"> <div class="animated-bg">
+
+<body oncontextmenu="return false;"> 
+
+    <div class="animated-bg">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
         <div class="blob blob-3"></div>
@@ -636,14 +653,17 @@
                         <li>Зависимость</li>
                         <li>Созависимые отношения и выход из них</li>
                         <li>Тревожные расстройства</li>
+                        <li>Работа с эмоциональной нестабильностью</li>
                         <li>Проблемы с самооценкой и принятием себя</li>
                         <li>Деструктивные семейные взаимоотношения</li>
                         <li>ПТСР (посттравматическое стрессовое расстройство)</li>
                         <li>Алекситимия</li>
+                        <li>Профилактика срывов и рецидивов</li>
                     </ul>
                     
                     <div class="methods-block">
                         <h3>Форматы и подходы работы:</h3>
+                        <span class="method-tag">12-шаговая программа</span>
                         <span class="method-tag">Терапевтические группы</span>
                         <span class="method-tag">Психокоррекционные группы</span>
                         <span class="method-tag">Арт-терапия</span>
@@ -757,7 +777,7 @@
                 <h4>Сертификат</h4>
             </div>
             <div class="diploma-card">
-                <img src="img19.png" alt="Сертификат">
+                <img src="img19.jpg" alt="Сертификат">
                 <h4>Сертификат</h4>
             </div>
 
